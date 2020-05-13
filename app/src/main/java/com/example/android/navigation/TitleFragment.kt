@@ -20,9 +20,10 @@ class TitleFragment : Fragment() {
                 inflater, R.layout.fragment_title, container, false)
 
         //We set OnClickListener to check for the actions
-        binding.playButton.setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment))
+        binding.playButton.setOnClickListener { v: View ->
+            v.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
 
+        }
        //Tells the AboutFragment of an existing menu
         setHasOptionsMenu(true)
         return binding.root
